@@ -18,7 +18,6 @@ def main():
     Num = int(input("Enter Number :"))
     Display(Num)
 
-
 if __name__ == "__main__":
     main()
 
