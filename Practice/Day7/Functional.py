@@ -1,0 +1,16 @@
+Addition = lambda a,b : a+b
+
+Substraction = lambda a,b : a-b
+
+No1 = 0
+No2 = 0
+Ans = 0
+
+No1 = int(input("Enter 1st number : "))     # 11     
+No2 = int(input("Enter 2nd number : "))     # 10
+
+Ans = Addition(No1,No2)                     # Ans = No1+No2     Ans = 11+10
+print("Addition is :",Ans)
+
+Ans = Substraction(No1,No2)                 # Ans = No1-No2     Ans = 11-10
+print("Subtraction is :",Ans)
