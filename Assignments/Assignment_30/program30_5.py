@@ -4,7 +4,7 @@
 # //  Description   : It accepts a file name and word  from user and 
 #                     checks if that word is present in the file or not
 # //  Input         : String
-# //  Ouput         : Boolean
+# //  Ouput         : Nothing
 # //  Author        : Sakshi Pradeep Bhapkar
 # //  Date          : 25/3/2026
 # //
