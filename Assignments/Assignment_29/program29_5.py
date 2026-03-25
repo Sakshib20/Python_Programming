@@ -37,7 +37,5 @@ def main():
 
     print(f"{word} count is : {iRet}")
 
-    
-
 if __name__ == "__main__":
     main()
