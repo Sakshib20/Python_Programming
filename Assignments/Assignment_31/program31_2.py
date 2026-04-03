@@ -4,17 +4,17 @@ import schedule
 import time
 from pathlib import Path
 
-# //////////////////////////////////////////////////////////////////////////////////////
+# ////////////////////////////////////////////////////////////////////////////////////////////////
 # //
-# //  Function Name : CountWords
-# //  Description   : It accepts a file name  from user and 
-#                     returns the number of line in the file
+# //  Function Name : DirRename
+# //  Description   : It accepts a directory name and two file extensions from user and 
+#                     rename all files with first file extension with second file extension
 # //  Input         : String
 # //  Ouput         : Integer
 # //  Author        : Sakshi Pradeep Bhapkar
-# //  Date          : 25/3/2026
+# //  Date          : 03/04/2026
 # //
-# //////////////////////////////////////////////////////////////////////////////////////
+# ////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 def DirRename(dName,src,dest):

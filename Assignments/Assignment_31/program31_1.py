@@ -6,12 +6,12 @@ import time
 # //////////////////////////////////////////////////////////////////////////////////////
 # //
 # //  Function Name : DirScan
-# //  Description   : It accepts a file name  from user and 
-#                     returns the number of line in the file
-# //  Input         : String
-# //  Ouput         : Integer
+# //  Description   : It accepts a directory name and file extension from user and 
+#                     displays all files with that extension
+# //  Input         : String,String
+# //  Ouput         : Nothing
 # //  Author        : Sakshi Pradeep Bhapkar
-# //  Date          : 25/3/2026
+# //  Date          : 03/04/2026
 # //
 # //////////////////////////////////////////////////////////////////////////////////////
 
