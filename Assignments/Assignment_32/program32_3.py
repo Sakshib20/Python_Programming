@@ -4,6 +4,44 @@ import hashlib
 import schedule
 import time
 
+# ////////////////////////////////////////////////////////////////////////////////////////////////
+# //
+# //  Function Name : DirectoryDuplicateRemoval
+# //  Description   : It accepts a directory name from user and delete all duplicate files from
+# //                  that directory. Writes names of duplicate files from directory into 
+# //                  log file named as Log.txt
+# //  Input         : String
+# //  Ouput         : Nothing
+# //  Author        : Sakshi Pradeep Bhapkar
+# //  Date          : 07/04/2026
+# //
+# ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+def DirectoryDuplicateRemoval(dName):
+    myDict = DirectoryDuplicate(dName)
+
+    fobj = open("Log.txt","w")
+
+    Result = list(filter(lambda X : (len(X)>1),myDict.values()))
+
+    Count = 0
+    Cnt = 0
+
+    for value in Result:
+        for subvalue in value:
+            Count = Count+1
+            
+            if(Count>1):
+                fobj.write(f"{subvalue}\n")
+                os.remove(subvalue)
+
+                Cnt = Cnt+1
+        Count = 0
+
+    fobj.write(f"Total deleted files : {Cnt}") 
+
+
 def CalculateCheckSum(filename):
     fobj = open(filename,'rb')
 
@@ -18,18 +56,6 @@ def CalculateCheckSum(filename):
     fobj.close()
 
     return hobj.hexdigest()
-
-# ////////////////////////////////////////////////////////////////////////////////////////////////
-# //
-# //  Function Name : DirectoryDuplicate
-# //  Description   : It accepts a directory name from user and write names of duplicate files
-# //                  from that directory into log file named as Log.txt
-# //  Input         : String
-# //  Ouput         : Nothing
-# //  Author        : Sakshi Pradeep Bhapkar
-# //  Date          : 07/04/2026
-# //
-# ////////////////////////////////////////////////////////////////////////////////////////////////
 
 def DirectoryDuplicate(dName):
     Ret = os.path.exists(dName)
@@ -58,10 +84,8 @@ def DirectoryDuplicate(dName):
                 else:
                     Duplicate[Checksum] = [file]
     
-        for key,value in Duplicate.items():
-            fobj.write(f"{key} : {value}\n")
-
-
+        return Duplicate
+            
 
 def main():
     dName = sys.argv[1]
@@ -73,11 +97,12 @@ def main():
     
     else:
         
-        schedule.every(10).seconds.do(DirectoryDuplicate,sys.argv[1])
+        schedule.every(10).seconds.do(DirectoryDuplicateRemoval,sys.argv[1])
 
         while(True):
             schedule.run_pending()
             time.sleep(1)
+
         
 
 if __name__ == "__main__":

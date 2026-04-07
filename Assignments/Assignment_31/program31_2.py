@@ -10,7 +10,7 @@ from pathlib import Path
 # //  Description   : It accepts a directory name and two file extensions from user and 
 #                     rename all files with first file extension with second file extension
 # //  Input         : String
-# //  Ouput         : Integer
+# //  Ouput         : Nothing
 # //  Author        : Sakshi Pradeep Bhapkar
 # //  Date          : 03/04/2026
 # //

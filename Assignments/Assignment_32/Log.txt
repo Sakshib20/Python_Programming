@@ -1,0 +1,5 @@
+Demo\abc copy 3.txt
+Demo\abc copy 4.txt
+Demo\abc copy.txt
+Demo\csv copy 3.txt
+Total deleted files : 4
